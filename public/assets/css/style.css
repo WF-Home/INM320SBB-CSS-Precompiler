@@ -275,12 +275,12 @@ footer a:hover {
   .footer-social-links a {
     margin: 0 28px;
   }
-  .footer-social-links i {
-    margin-right: 5px;
-  }
   .footer-social-links a span {
     display: inline;
     font-size: 11px;
+  }
+  .footer-social-links i {
+    margin-right: 5px;
   }
 }
 

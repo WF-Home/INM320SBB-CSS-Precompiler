@@ -2,6 +2,7 @@ $default-font: 'Josefin Sans', sans-serif;
 $secondary-font: Quando;
 $primary-color: #989898;
 $secondary-color: #111111;
+$hover-color: #35c4ce;
 
 @mixin headings($font-size) {
     font-size: $font-size;
@@ -13,6 +14,17 @@ $secondary-color: #111111;
     line-height: 1.3em;
     word-wrap: break-word;
     color: $secondary-color;
+}
+
+@mixin post-title() {
+    color: #324360;
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: 900;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 1.3em;
+    transition: all .3s ease;
 }
 
 
@@ -93,17 +105,10 @@ article {
     margin-top: 0;
 
     a {
-        color: #324360;
-        text-transform: uppercase;
-        font-size: 26px;
-        font-weight: 900;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        line-height: 1.3em;
-        transition: all .3s ease;
+        @include post-title();
 
         &:hover {
-            color: #35c4ce;
+            color: $hover-color;
         }
     }      
 }
@@ -249,29 +254,33 @@ footer {
         flex: 1;
         overflow: hidden;
         margin-bottom: 0;
-    }
-    .image-part img {
-        transition: transform 3.5s ease-in-out;
-    }
-    .image-part img:hover {
-        transform: scale(1.5,1.5);
+
+        img {
+            transition: transform 3.5s ease-in-out;
+
+            &:hover {
+                transform: scale(1.5,1.5);
+            }
+        }
     }
     .content-part {
         flex: 1;
         padding-left: 50px;
     }
 
-
-
     /* footer */
-    .footer-social-links a {
-        margin: 0 28px;
-    }
-    .footer-social-links i {
-        margin-right: 5px;
-    }
-    .footer-social-links a span {
-        display: inline;
-        font-size: 11px;
+    .footer-social-links {
+        a {
+            margin: 0 28px;
+
+            span {
+                display: inline;
+                font-size: 11px;
+            }
+        }
+
+        i {
+            margin-right: 5px;
+        }
     }
 }
